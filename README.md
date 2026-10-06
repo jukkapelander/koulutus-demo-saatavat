@@ -16,13 +16,13 @@ Vaihtoehto A – tietokanta Dockerissa, PHP omalla koneella (WSL2/Linux/macOS):
 docker compose up -d db                     # PostgreSQL 16 + skeema + testiaineisto
 sudo apt install php-cli php-pgsql          # Debian/Ubuntu/WSL2; macOS: brew install php
 php tests/run.php                           # kaikkien testien pitäisi mennä läpi
-php -S 127.0.0.1:8080 -t public             # kehityspalvelin
+php -S 127.0.0.1:18080 -t public            # kehityspalvelin
 ```
 
 Vaihtoehto B – kaikki Dockerissa:
 
 ```bash
-docker compose up --build                   # db + app, API osoitteessa http://localhost:8080
+docker compose up --build                   # db + app, API osoitteessa http://localhost:18080
 docker compose exec app php tests/run.php
 ```
 
@@ -70,12 +70,12 @@ Testiaineiston avaimet: `demo-key-pohjola`, `demo-key-tammerkoski`, `demo-key-ky
 Esimerkkejä:
 
 ```bash
-curl -H "X-Api-Key: demo-key-pohjola" localhost:8080/api/invoices
-curl -H "X-Api-Key: demo-key-pohjola" localhost:8080/api/invoices/1001
-curl -H "X-Api-Key: demo-key-pohjola" "localhost:8080/api/invoices/1001/interest?as_of=2026-06-25"
+curl -H "X-Api-Key: demo-key-pohjola" localhost:18080/api/invoices
+curl -H "X-Api-Key: demo-key-pohjola" localhost:18080/api/invoices/1001
+curl -H "X-Api-Key: demo-key-pohjola" "localhost:18080/api/invoices/1001/interest?as_of=2026-06-25"
 curl -X POST -H "X-Api-Key: demo-key-pohjola" -H "Content-Type: application/json" \
   -d '{"amount": 100.00, "paid_at": "2026-10-01", "bank_archive_id": "B2026-0100"}' \
-  localhost:8080/api/invoices/1001/payments
+  localhost:18080/api/invoices/1001/payments
 ```
 
 ## Testit

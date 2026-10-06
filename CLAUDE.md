@@ -6,7 +6,7 @@ Pieni PHP 8.3 + PostgreSQL -sovellus laskusaatavien, suoritusten ja perintäkulu
 
 - Testit: `php tests/run.php` (vaatii käynnissä olevan tietokannan, ks. README)
 - Skeema ja testiaineisto: `php bin/migrate.php`
-- Kehityspalvelin: `php -S 127.0.0.1:8080 -t public`
+- Kehityspalvelin: `php -S 127.0.0.1:18080 -t public`
 - Laskujen tilojen uudelleenlaskenta: `php bin/recompute_status.php`
 
 ## Säännöt

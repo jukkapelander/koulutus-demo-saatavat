@@ -16,7 +16,7 @@ final class Config
         return sprintf(
             'pgsql:host=%s;port=%s;dbname=%s',
             self::get('DB_HOST', '127.0.0.1'),
-            self::get('DB_PORT', '5432'),
+            self::get('DB_PORT', '15432'),
             self::get('DB_NAME', 'saatavat'),
         );
     }
