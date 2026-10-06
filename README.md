@@ -13,7 +13,7 @@ ohjelmistokehitykseen: tehtävät löytyvät tiedostosta `TEHTAVAT.md`.
 Vaihtoehto A – tietokanta Dockerissa, PHP omalla koneella (WSL2/Linux/macOS):
 
 ```bash
-docker compose up -d db                     # PostgreSQL 16 + skeema + testiaineisto
+docker compose up -d --wait db              # PostgreSQL 16 + skeema + testiaineisto
 sudo apt install php-cli php-pgsql          # Debian/Ubuntu/WSL2; macOS: brew install php
 php tests/run.php                           # kaikkien testien pitäisi mennä läpi
 php -S 127.0.0.1:18080 -t public            # kehityspalvelin
